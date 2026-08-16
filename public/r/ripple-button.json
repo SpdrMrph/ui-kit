@@ -1,0 +1,43 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ripple-button",
+  "title": "Ripple Button",
+  "description": "A customizable button component with variants, sizes, and ripple effect.",
+  "dependencies": [
+    "tailwind-variants"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/shared/ui/RippleButton/RippleButton.tsx",
+      "content": "import { useRipple } from \"@/shared/ui/RippleButton/useRipple\";\r\nimport { Button } from \"../Button\";\r\nimport type { IButton } from \"../Button/button.types\";\r\n\r\nexport const RippleButton = (props: IButton) => {\r\n  const { variant, ...rest } = props;\r\n  const { RippleEffect, onAnimationEnd, ripples, start } = useRipple();\r\n  const rippleCondition = variant === \"default\" || variant === \"secondary\";\r\n\r\n  return (\r\n    <Button\r\n      onMouseDown={rippleCondition ? start : undefined}\r\n      variant={variant}\r\n      {...rest}\r\n    >\r\n      {rippleCondition && (\r\n        <RippleEffect ripples={ripples} onAnimationEnd={onAnimationEnd} />\r\n      )}\r\n    </Button>\r\n  );\r\n};\r\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/shared/ui/RippleButton/index.ts",
+      "content": "export { RippleButton } from \"./RippleButton\";\r\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/shared/ui/RippleButton/useRipple.tsx",
+      "content": "import type { MouseEvent } from \"react\";\nimport { memo, useCallback, useState } from \"react\";\n\ntype TRipple = {\n  x: number;\n  y: number;\n  id: number;\n  diameter: number;\n};\n\nconst RippleEffect = memo(\n  ({\n    ripples,\n    onAnimationEnd,\n  }: {\n    ripples: TRipple[];\n    onAnimationEnd: (id: number) => void;\n  }) => (\n    <>\n      {ripples.map(({ diameter, id, x, y }) => (\n        <span\n          key={id}\n          style={{\n            width: diameter,\n            height: diameter,\n            left: x,\n            top: y,\n            transform: \"scale(0)\",\n            opacity: 0.5,\n          }}\n          onAnimationEnd={() => onAnimationEnd(id)}\n          className=\"absolute rounded-full bg-white/75 animate-ripple pointer-events-none\"\n        />\n      ))}\n    </>\n  ),\n);\n\nexport const useRipple = () => {\n  const [ripples, setRipples] = useState<TRipple[]>([]);\n\n  const start = (e: MouseEvent<HTMLElement>) => {\n    const rect = e.currentTarget.getBoundingClientRect();\n    const diameter = Math.max(rect.width, rect.height) * 2;\n    const x = e.clientX - rect.left - diameter / 2;\n    const y = e.clientY - rect.top - diameter / 2;\n\n    const newRipple: TRipple = {\n      id: Date.now() + Math.random(),\n      x,\n      y,\n      diameter,\n    };\n\n    setRipples((prev) => [...prev, newRipple]);\n  };\n\n  const onAnimationEnd = useCallback((id: number) => {\n    setRipples((prev) => prev.filter((ripple) => ripple.id !== id));\n  }, []);\n\n  return { start, ripples, onAnimationEnd, RippleEffect };\n};\n",
+      "type": "registry:hook"
+    }
+  ],
+  "cssVars": {
+    "theme": {
+      "animate-ripple": "ripple 600ms ease-out"
+    }
+  },
+  "css": {
+    "@keyframes ripple": {
+      "to": {
+        "transform": "scale(1)",
+        "opacity": "0"
+      }
+    }
+  },
+  "type": "registry:ui"
+}

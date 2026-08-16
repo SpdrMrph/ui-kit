@@ -1,0 +1,42 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "ui-kit",
+  "homepage": "https://github.com/SpdrMrph/ui-kit",
+  "items": [
+    {
+      "name": "ripple-button",
+      "type": "registry:ui",
+      "title": "Ripple Button",
+      "description": "A customizable button component with variants, sizes, and ripple effect.",
+      "dependencies": ["tailwind-variants"],
+      "registryDependencies": ["button"],
+      "cssVars": {
+        "theme": {
+          "animate-ripple": "ripple 600ms ease-out"
+        }
+      },
+      "css": {
+        "@keyframes ripple": {
+          "to": {
+            "transform": "scale(1)",
+            "opacity": "0"
+          }
+        }
+      },
+      "files": [
+        {
+          "path": "RippleButton.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "index.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "useRipple.tsx",
+          "type": "registry:hook"
+        }
+      ]
+    }
+  ]
+}

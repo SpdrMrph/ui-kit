@@ -1,0 +1,32 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "ui-kit",
+  "homepage": "https://github.com/SpdrMrph/ui-kit",
+  "items": [
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "A customizable button component with variants, sizes.",
+      "dependencies": ["tailwind-variants"],
+      "files": [
+        {
+          "path": "Button.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "button.types.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "button.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}
