@@ -9,7 +9,7 @@
       "title": "Ripple Button",
       "description": "A customizable button component with variants, sizes, and ripple effect.",
       "dependencies": ["tailwind-variants"],
-      "registryDependencies": ["button"],
+      "registryDependencies": ["SpdrMrph/ui-kit/button"],
       "cssVars": {
         "theme": {
           "animate-ripple": "ripple 600ms ease-out"
