@@ -28,10 +28,12 @@
       "type": "registry:hook"
     }
   ],
+  "cssVars": {
+    "theme": {
+      "animate-ripple": "ripple 600ms ease-out"
+    }
+  },
   "css": {
-    "@theme": {
-      "--animate-ripple": "ripple 600ms ease-out"
-    },
     "@keyframes ripple": {
       "to": {
         "transform": "scale(1)",

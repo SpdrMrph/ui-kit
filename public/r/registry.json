@@ -9,10 +9,12 @@
       "title": "Button",
       "description": "A customizable button component with variants, sizes, and optional ripple effect.",
       "dependencies": ["tailwind-variants"],
+      "cssVars": {
+        "theme": {
+          "animate-ripple": "ripple 600ms ease-out"
+        }
+      },
       "css": {
-        "@theme": {
-          "--animate-ripple": "ripple 600ms ease-out"
-        },
         "@keyframes ripple": {
           "to": {
             "transform": "scale(1)",
