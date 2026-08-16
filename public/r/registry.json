@@ -11,15 +11,15 @@
       "dependencies": ["tailwind-variants"],
       "files": [
         {
-          "path": "src/shared/ui/button/Button.tsx",
+          "path": "src/shared/ui/Button/Button.tsx",
           "type": "registry:ui"
         },
         {
-          "path": "src/shared/ui/button/button.types.ts",
+          "path": "src/shared/ui/Button/button.types.ts",
           "type": "registry:ui"
         },
         {
-          "path": "src/shared/ui/button/button.variants.ts",
+          "path": "src/shared/ui/Button/button.variants.ts",
           "type": "registry:ui"
         },
         {
