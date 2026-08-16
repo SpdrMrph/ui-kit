@@ -9,6 +9,17 @@
       "title": "Button",
       "description": "A customizable button component with variants, sizes, and optional ripple effect.",
       "dependencies": ["tailwind-variants"],
+      "css": {
+        "@theme": {
+          "--animate-ripple": "ripple 600ms ease-out"
+        },
+        "@keyframes ripple": {
+          "to": {
+            "transform": "scale(1)",
+            "opacity": "0"
+          }
+        }
+      },
       "files": [
         {
           "path": "src/shared/ui/Button/Button.tsx",
