@@ -1,0 +1,32 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "ui-kit",
+  "homepage": "https://github.com/YOUR_USERNAME/YOUR_REPOSITORY",
+  "items": [
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "A customizable button component with variants, sizes, and optional ripple effect.",
+      "dependencies": ["tailwind-variants"],
+      "files": [
+        {
+          "path": "src/shared/ui/button/Button.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/shared/ui/button/button.types.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/shared/ui/button/button.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/shared/lib/useRipple.tsx",
+          "type": "registry:hook"
+        }
+      ]
+    }
+  ]
+}
