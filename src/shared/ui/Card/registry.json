@@ -1,0 +1,32 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "ui-kit",
+  "homepage": "https://github.com/SpdrMrph/ui-kit",
+  "items": [
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Card",
+      "description": "A compound card component providing Header, Content, Title, Description and Footer slots for flexible UI composition.",
+      "dependencies": ["tailwind-variants"],
+      "files": [
+        {
+          "path": "Card.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "card.types.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "card.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}

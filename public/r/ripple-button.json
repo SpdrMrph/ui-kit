@@ -7,7 +7,7 @@
     "tailwind-variants"
   ],
   "registryDependencies": [
-    "button"
+    "SpdrMrph/ui-kit/button"
   ],
   "files": [
     {
