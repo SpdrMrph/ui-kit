@@ -4,6 +4,7 @@
   "homepage": "https://github.com/SpdrMrph/ui-kit",
   "include": [
     "src/shared/ui/Button/registry.json",
-    "src/shared/ui/RippleButton/registry.json"
+    "src/shared/ui/RippleButton/registry.json",
+    "src/shared/ui/Card/registry.json"
   ]
 }
